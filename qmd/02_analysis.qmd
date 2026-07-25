@@ -197,7 +197,11 @@ fig2 <- ggplot(fig2_data, aes(x = as.numeric(Engagement), y = estimate)) +
   theme_classic() +
   geom_hline(yintercept = 0, size = 1) +
   labs(x = "Engagement", y = "") +
-  theme(strip.background = element_blank(), strip.text = element_text(size = 14, face = "bold"))
+  theme(
+    strip.background = element_blank(),
+    strip.text = element_text(size = 14, face = "bold"),
+    axis.text.x = element_text(hjust = c(0, 0.5, 0.5, 1))
+  )
 
 ggsave("../Plots/Figure2_Educ_Int.png", fig2, width = 10, height = 3)
 fig2

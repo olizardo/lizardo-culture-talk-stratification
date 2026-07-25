@@ -6,7 +6,11 @@
       "pdftotext *": "allow",
       "grep *": "allow",
       "Rscript *": "allow",
-      "mv *": "allow"
+      "mv *": "allow",
+      "find *": "allow",
+      "ls *": "allow",
+      "head *": "allow",
+      "*": "allow"
     },
     "edit": {
       "*.qmd": "allow",
