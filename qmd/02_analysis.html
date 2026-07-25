@@ -112,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Plays  =</span> <span class="fu">reformulate</span>(<span class="fu">c</span>(xvars, <span class="st">"c_freq_plays"</span>), <span class="st">"talk_plays"</span>)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>models_t2 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(formulas_t2, <span class="cf">function</span>(f) <span class="fu">polr</span>(f, <span class="at">data =</span> df, <span class="at">Hess =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>models_t2 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(formulas_t2, <span class="cf">function</span>(f) <span class="fu">polr</span>(f, <span class="at">data =</span> df, <span class="at">Hess =</span> <span class="cn">TRUE</span>, <span class="at">method =</span> <span class="st">"probit"</span>))</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">modelsummary</span>(models_t2, <span class="at">stars =</span> <span class="cn">TRUE</span>, <span class="at">output =</span> <span class="st">"../Tabs/table2.html"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -158,7 +158,7 @@ Cumulative Var 0.329 0.564</code></pre>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Plays  =</span> <span class="fu">reformulate</span>(<span class="fu">c</span>(<span class="st">"c_freq_plays"</span>, <span class="st">"hi"</span>, <span class="st">"pop"</span>, xvars), <span class="st">"talk_plays"</span>)</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>models_t4 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(formulas_t4, <span class="cf">function</span>(f) <span class="fu">polr</span>(f, <span class="at">data =</span> df, <span class="at">Hess =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>models_t4 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(formulas_t4, <span class="cf">function</span>(f) <span class="fu">polr</span>(f, <span class="at">data =</span> df, <span class="at">Hess =</span> <span class="cn">TRUE</span>, <span class="at">method =</span> <span class="st">"probit"</span>))</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">modelsummary</span>(models_t4, <span class="at">stars =</span> <span class="cn">TRUE</span>, <span class="at">output =</span> <span class="st">"../Tabs/table4.html"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -173,20 +173,134 @@ Cumulative Var 0.329 0.564</code></pre>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Plays  =</span> <span class="fu">reformulate</span>(xvars, <span class="st">"freq_plays"</span>)</span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>models_t5 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(formulas_t5, <span class="cf">function</span>(f) <span class="fu">polr</span>(f, <span class="at">data =</span> df, <span class="at">Hess =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>models_t5 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(formulas_t5, <span class="cf">function</span>(f) <span class="fu">polr</span>(f, <span class="at">data =</span> df, <span class="at">Hess =</span> <span class="cn">TRUE</span>, <span class="at">method =</span> <span class="st">"probit"</span>))</span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">modelsummary</span>(models_t5, <span class="at">stars =</span> <span class="cn">TRUE</span>, <span class="at">output =</span> <span class="st">"../Tabs/table5.html"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="figures-marginal-effects" class="level2">
 <h2 class="anchored" data-anchor-id="figures-marginal-effects">Figures: Marginal Effects</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example for Figure 1: Marginal effect of Education vs Income</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Stata: margins, dydx(c_finc_imp c_educ_imp) predict(pr out(4)) for movies/music/books</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># arts/plays: predict(pr out(3)) + predict(pr out(4))</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to get marginal effects for out(4) or out(3+4)</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># In R, marginaleffects::avg_slopes or slopes can do this.</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Skipping exact implementation here but can be added later.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Figure 1: Marginal Effect of Education vs Income</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>get_mfx_fig1 <span class="ot">&lt;-</span> <span class="cf">function</span>(model, name) {</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Movies"</span>, <span class="st">"Music"</span>, <span class="st">"Books"</span>)) {</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># predict pr(out=4)</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    pred_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(mod, newdata) {</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">predict</span>(mod, newdata, <span class="at">type =</span> <span class="st">"probs"</span>)[, <span class="dv">4</span>]</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># predict pr(out=3) + pr(out=4)</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    pred_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(mod, newdata) {</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>      preds <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, newdata, <span class="at">type =</span> <span class="st">"probs"</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>      preds[, <span class="dv">3</span>] <span class="sc">+</span> preds[, <span class="dv">4</span>]</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Workaround for avg_slopes not accepting custom pred functions directly in all versions:</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Using marginaleffects &gt;= 0.10: we can use `type = "probs"` and then aggregate, </span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># but since we want custom functions, it's easier to just compute it manually or use predictions().</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Since polr returns a matrix for type="probs", `slopes` handles it by returning a row per level.</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">avg_slopes</span>(model, <span class="at">variables =</span> <span class="fu">c</span>(<span class="st">"c_educ_imp"</span>, <span class="st">"c_finc_imp"</span>), <span class="at">type =</span> <span class="st">"probs"</span>)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Movies"</span>, <span class="st">"Music"</span>, <span class="st">"Books"</span>)) {</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    s <span class="ot">&lt;-</span> s[s<span class="sc">$</span>group <span class="sc">==</span> <span class="st">"4"</span>, ]</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    s <span class="ot">&lt;-</span> s[s<span class="sc">$</span>group <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"3"</span>, <span class="st">"4"</span>), ]</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    s <span class="ot">&lt;-</span> s <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(term) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">estimate =</span> <span class="fu">sum</span>(estimate), <span class="at">std.error =</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>(std.error<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>  s<span class="sc">$</span>domain <span class="ot">&lt;-</span> name</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(s)</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>fig1_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_mfx_fig1</span>(models_t2<span class="sc">$</span>Movies, <span class="st">"Movies"</span>),</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_mfx_fig1</span>(models_t2<span class="sc">$</span>Music, <span class="st">"Music"</span>),</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_mfx_fig1</span>(models_t2<span class="sc">$</span>Books, <span class="st">"Books"</span>),</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_mfx_fig1</span>(models_t2<span class="sc">$</span>Arts, <span class="st">"Arts"</span>),</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_mfx_fig1</span>(models_t2<span class="sc">$</span>Plays, <span class="st">"Plays"</span>)</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>fig1_data<span class="sc">$</span>term <span class="ot">&lt;-</span> <span class="fu">factor</span>(fig1_data<span class="sc">$</span>term, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"c_educ_imp"</span>, <span class="st">"c_finc_imp"</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Education"</span>, <span class="st">"Fam. Income"</span>))</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>fig1_data<span class="sc">$</span>domain <span class="ot">&lt;-</span> <span class="fu">factor</span>(fig1_data<span class="sc">$</span>domain, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Movies"</span>, <span class="st">"Music"</span>, <span class="st">"Books"</span>, <span class="st">"Arts"</span>, <span class="st">"Plays"</span>))</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(fig1_data, <span class="fu">aes</span>(<span class="at">x =</span> term, <span class="at">y =</span> estimate)) <span class="sc">+</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> estimate <span class="sc">-</span> <span class="fl">1.645</span><span class="sc">*</span>std.error, <span class="at">ymax =</span> estimate <span class="sc">+</span> <span class="fl">1.645</span><span class="sc">*</span>std.error), <span class="at">width =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"gray50"</span>) <span class="sc">+</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>domain, <span class="at">nrow =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">strip.background =</span> <span class="fu">element_blank</span>(), <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>))</span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"../Plots/Figure1_Educ_Inc.png"</span>, fig1, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>fig1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_analysis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Figure 2: Marginal Effect of Education by Levels of Cultural Engagement</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>models_int <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Movies =</span> <span class="fu">polr</span>(talk_movies <span class="sc">~</span> c_finc_imp <span class="sc">+</span> c_age_imp <span class="sc">+</span> c_gender <span class="sc">+</span> c_city <span class="sc">+</span> freq_movies <span class="sc">*</span> c_educ_imp, <span class="at">data =</span> df, <span class="at">Hess =</span> <span class="cn">TRUE</span>, <span class="at">method =</span> <span class="st">"probit"</span>),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Music  =</span> <span class="fu">polr</span>(talk_music <span class="sc">~</span> c_finc_imp <span class="sc">+</span> c_age_imp <span class="sc">+</span> c_gender <span class="sc">+</span> c_city <span class="sc">+</span> freq_music <span class="sc">*</span> c_educ_imp, <span class="at">data =</span> df, <span class="at">Hess =</span> <span class="cn">TRUE</span>, <span class="at">method =</span> <span class="st">"probit"</span>),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Books  =</span> <span class="fu">polr</span>(talk_books <span class="sc">~</span> c_finc_imp <span class="sc">+</span> c_age_imp <span class="sc">+</span> c_gender <span class="sc">+</span> c_city <span class="sc">+</span> freq_books <span class="sc">*</span> c_educ_imp, <span class="at">data =</span> df, <span class="at">Hess =</span> <span class="cn">TRUE</span>, <span class="at">method =</span> <span class="st">"probit"</span>),</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Arts   =</span> <span class="fu">polr</span>(talk_arts <span class="sc">~</span> c_finc_imp <span class="sc">+</span> c_age_imp <span class="sc">+</span> c_gender <span class="sc">+</span> c_city <span class="sc">+</span> freq_arts <span class="sc">*</span> c_educ_imp, <span class="at">data =</span> df, <span class="at">Hess =</span> <span class="cn">TRUE</span>, <span class="at">method =</span> <span class="st">"probit"</span>),</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Plays  =</span> <span class="fu">polr</span>(talk_plays <span class="sc">~</span> c_finc_imp <span class="sc">+</span> c_age_imp <span class="sc">+</span> c_gender <span class="sc">+</span> c_city <span class="sc">+</span> freq_plays <span class="sc">*</span> c_educ_imp, <span class="at">data =</span> df, <span class="at">Hess =</span> <span class="cn">TRUE</span>, <span class="at">method =</span> <span class="st">"probit"</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>get_mfx_fig2 <span class="ot">&lt;-</span> <span class="cf">function</span>(model, name) {</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  freq_var <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"freq_"</span>, <span class="fu">tolower</span>(name))</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># A faster approach is to evaluate for specific levels directly:</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">avg_slopes</span>(model, <span class="at">variables =</span> <span class="st">"c_educ_imp"</span>, <span class="at">by =</span> freq_var, <span class="at">type =</span> <span class="st">"probs"</span>)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Movies"</span>, <span class="st">"Music"</span>, <span class="st">"Books"</span>)) {</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    s <span class="ot">&lt;-</span> s[s<span class="sc">$</span>group <span class="sc">==</span> <span class="st">"4"</span>, ]</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    s <span class="ot">&lt;-</span> s[s<span class="sc">$</span>group <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"3"</span>, <span class="st">"4"</span>), ]</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># aggregate out(3) and out(4)</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    s <span class="ot">&lt;-</span> s <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(<span class="sc">!!</span><span class="fu">sym</span>(freq_var)) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">estimate =</span> <span class="fu">sum</span>(estimate), <span class="at">std.error =</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>(std.error<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>  s<span class="sc">$</span>domain <span class="ot">&lt;-</span> name</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(s)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"Engagement"</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(s)</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>fig2_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_mfx_fig2</span>(models_int<span class="sc">$</span>Movies, <span class="st">"Movies"</span>),</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_mfx_fig2</span>(models_int<span class="sc">$</span>Music, <span class="st">"Music"</span>),</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_mfx_fig2</span>(models_int<span class="sc">$</span>Books, <span class="st">"Books"</span>),</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_mfx_fig2</span>(models_int<span class="sc">$</span>Arts, <span class="st">"Arts"</span>),</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_mfx_fig2</span>(models_int<span class="sc">$</span>Plays, <span class="st">"Plays"</span>)</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>fig2_data<span class="sc">$</span>Engagement <span class="ot">&lt;-</span> <span class="fu">factor</span>(fig2_data<span class="sc">$</span>Engagement, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Infrequent"</span>, <span class="st">" "</span>, <span class="st">"  "</span>, <span class="st">"Frequent"</span>))</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>fig2_data<span class="sc">$</span>domain <span class="ot">&lt;-</span> <span class="fu">factor</span>(fig2_data<span class="sc">$</span>domain, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Movies"</span>, <span class="st">"Music"</span>, <span class="st">"Books"</span>, <span class="st">"Arts"</span>, <span class="st">"Plays"</span>))</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>fig2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(fig2_data, <span class="fu">aes</span>(<span class="at">x =</span> Engagement, <span class="at">y =</span> estimate, <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">shape =</span> <span class="dv">18</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fill =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> estimate <span class="sc">-</span> <span class="fl">1.645</span><span class="sc">*</span>std.error, <span class="at">ymax =</span> estimate <span class="sc">+</span> <span class="fl">1.645</span><span class="sc">*</span>std.error), <span class="at">width =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>domain, <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Engagement"</span>, <span class="at">y =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">strip.background =</span> <span class="fu">element_blank</span>(), <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>))</span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"../Plots/Figure2_Educ_Int.png"</span>, fig2, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">3</span>)</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>fig2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_analysis_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 

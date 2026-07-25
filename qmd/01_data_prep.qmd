@@ -8,7 +8,7 @@ library(haven)
 library(dplyr)
 
 # Read the original data
-df <- read_dta("../NSS-2002-2004-using.dta")
+df <- read_dta("../dat/NSS-2002-2004-using.dta")
 
 # The Stata script creates centered/scaled variables (c_*) by dividing by 2*SD
 c_vars <- grep("^c_", names(df), value = TRUE)

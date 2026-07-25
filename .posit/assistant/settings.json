@@ -5,7 +5,8 @@
       "quarto render *": "allow",
       "pdftotext *": "allow",
       "grep *": "allow",
-      "Rscript *": "allow"
+      "Rscript *": "allow",
+      "mv *": "allow"
     },
     "edit": {
       "*.qmd": "allow",
