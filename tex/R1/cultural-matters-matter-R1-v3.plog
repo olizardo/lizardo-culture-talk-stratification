@@ -1,0 +1,26 @@
+Chikrii Softlab pseudoTeX 2.5 report.
+http://www.chikrii.com, mailto: support@chikrii.com
+
+cultural-matters-matter-R1-v3.tex (Ln 3) Warning: Can't find pseudoTeX definition for class/package (verbatim)
+cultural-matters-matter-R1-v3.tex (Ln 5) Syntax Error: Undefined control sequence (\) within (\bibpunct)
+cultural-matters-matter-R1-v3.tex (Ln 6) Warning: Can't find pseudoTeX definition for class/package (geometry)
+cultural-matters-matter-R1-v3.tex (Ln 7) Warning: Can't find pseudoTeX definition for class/package (setspace)
+cultural-matters-matter-R1-v3.tex (Ln 9) Warning: Can't find pseudoTeX definition for class/package (url)
+cultural-matters-matter-R1-v3.tex (Ln 11) Warning: Can't find pseudoTeX definition for class/package (subfig)
+cultural-matters-matter-R1-v3.tex (Ln 58) Syntax Error: Undefined control sequence (\) within (\doublespacing)
+cultural-matters-matter-R1-v3.tex (Ln 62) Syntax Error: Undefined control sequence (\) within (\cit)
+cultural-matters-matter-R1-v3.tex (Ln 63) Syntax Error: Missing $ inserted
+cultural-matters-matter-R1-v3.tex (Ln 63) Warning: Misplaced subscript
+cultural-matters-matter-R1-v3.tex (Ln 63) Syntax Error: Extra }, or forgotten $
+cultural-matters-matter-R1-v3.tex (Ln 83) Syntax Error: Undefined control sequence (\)
+cultural-matters-matter-R1-v3.tex (Ln 102) Syntax Error: Undefined control sequence (\) within (\ci)
+cultural-matters-matter-R1-v3.tex (Ln 338) Syntax Error: Undefined control sequence (\)
+cultural-matters-matter-R1-v3.tex (Ln 399) Syntax Error: Missing $ inserted
+cultural-matters-matter-R1-v3.tex (Ln 399) Warning: Misplaced subscript
+cultural-matters-matter-R1-v3.tex (Ln 399) Syntax Error: Extra }, or forgotten $
+cultural-matters-matter-R1-v3.tex (Ln 401) Syntax Error: Missing $ inserted
+cultural-matters-matter-R1-v3.tex (Ln 575) Syntax Error: Undefined control sequence (\) within (\singlespacing)
+cultural-matters-matter-R1-v3.tex (Ln 634) Syntax Error: Undefined control sequence (\) within (\subfloat)
+cultural-matters-matter-R1-v3.tex (Ln 653) Syntax Error: Undefined control sequence (\) within (\subfloat)
+cultural-matters-matter-R1-v3.tex (Ln 784) Syntax Error: Undefined control sequence (\) within (\subfloat)
+cultural-matters-matter-R1-v3.tex (Ln 809) Syntax Error: Undefined control sequence (\subfloat)

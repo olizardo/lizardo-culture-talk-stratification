@@ -1,0 +1,104 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{longtable}{l*{5}{c}}
+\toprule\endfirsthead\midrule\endhead\midrule\endfoot\endlastfoot
+                    &\multicolumn{1}{c}{Movies}&\multicolumn{1}{c}{Music}&\multicolumn{1}{c}{Books}&\multicolumn{1}{c}{Arts}&\multicolumn{1}{c}{Plays}\\
+\midrule
+Beta                &                   &                   &                   &                   &                   \\
+Education           &       0.261\sym{*}&       0.365\sym{*}&       0.118\sym{*}&       0.131\sym{*}&       0.162\sym{*}\\
+                    &      (4.43)       &      (5.26)       &      (2.11)       &      (3.01)       &      (3.89)       \\
+Family Income       &      0.0978\sym{*}&       0.113\sym{*}&      0.0768\sym{*}&       0.113\sym{*}&      0.0816\sym{*}\\
+                    &      (2.16)       &      (2.83)       &      (1.87)       &      (3.23)       &      (2.31)       \\
+Age                 &      -0.182\sym{*}&      -0.195\sym{*}&      -0.159\sym{*}&     -0.0470\sym{*}&     -0.0805\sym{*}\\
+                    &     (-7.27)       &     (-4.47)       &     (-3.38)       &     (-1.92)       &     (-2.82)       \\
+Gender (Women=1)    &       0.415\sym{*}&       0.195\sym{*}&       0.563\sym{*}&       0.339\sym{*}&       0.465\sym{*}\\
+                    &      (4.59)       &      (1.65)       &      (4.61)       &      (3.53)       &      (5.01)       \\
+Race (Afr. Amer.=1) &      -0.375       &      -0.419\sym{*}&       0.472\sym{*}&       0.215       &       0.185       \\
+                    &     (-1.63)       &     (-1.65)       &      (2.28)       &      (1.29)       &      (0.96)       \\
+Race (Asian=1)      &    -0.00934       &     -0.0578       &     -0.0348       &      0.0626       &       0.301       \\
+                    &     (-0.02)       &     (-0.12)       &     (-0.07)       &      (0.16)       &      (0.65)       \\
+Race (Hispanic=1)   &      -1.014\sym{*}&     -0.0381       &      -0.305       &       0.149       &      -0.350       \\
+                    &     (-2.95)       &     (-0.15)       &     (-1.09)       &      (0.62)       &     (-1.29)       \\
+Married             &      0.0883       &      -0.226\sym{*}&     -0.0861       &     -0.0949       &    -0.00903       \\
+                    &      (0.90)       &     (-1.72)       &     (-0.64)       &     (-0.90)       &     (-0.09)       \\
+Urban Location      &      0.0736       &       0.321\sym{*}&       0.559\sym{*}&       0.106       &       0.298\sym{*}\\
+                    &      (0.79)       &      (2.64)       &      (3.06)       &      (1.06)       &      (3.09)       \\
+How often R went to movies in past year&       0.683\sym{*}&                   &                   &                   &                   \\
+                    &      (7.62)       &                   &                   &                   &                   \\
+Movies Frequency (Numeric)&       0.822\sym{*}&                   &                   &                   &                   \\
+                    &      (6.11)       &                   &                   &                   &                   \\
+How often R listened to music at home in past year&                   &       0.228\sym{*}&                   &                   &                   \\
+                    &                   &      (2.09)       &                   &                   &                   \\
+Music Frequency (Numeric)&                   &       0.410\sym{*}&                   &                   &                   \\
+                    &                   &      (3.01)       &                   &                   &                   \\
+How often read books for pleasure&                   &                   &       0.713\sym{*}&                   &                   \\
+                    &                   &                   &      (7.36)       &                   &                   \\
+Books Frequency (Numeric)&                   &                   &       0.642\sym{*}&                   &                   \\
+                    &                   &                   &      (3.99)       &                   &                   \\
+How often R went to museums in past year&                   &                   &                   &       1.012\sym{*}&                   \\
+                    &                   &                   &                   &      (7.77)       &                   \\
+Arts Frequency (Numeric)&                   &                   &                   &       0.547\sym{*}&                   \\
+                    &                   &                   &                   &      (3.74)       &                   \\
+How often R went to live performances in past year&                   &                   &                   &                   &       0.603\sym{*}\\
+                    &                   &                   &                   &                   &      (6.08)       \\
+Plays Frequency (Numeric)&                   &                   &                   &                   &       0.542\sym{*}\\
+                    &                   &                   &                   &                   &      (4.45)       \\
+\midrule
+Gamma\_2             &                   &                   &                   &                   &                   \\
+Education           &     -0.0900       &      -0.155\sym{*}&                   &                   &                   \\
+                    &     (-1.62)       &     (-2.55)       &                   &                   &                   \\
+Family Income       &     -0.0924\sym{*}&                   &                   &      -0.120\sym{*}&     0.00855       \\
+                    &     (-2.14)       &                   &                   &     (-2.85)       &      (0.22)       \\
+Race (Afr. Amer.=1) &       0.384\sym{*}&       0.759\sym{*}&                   &                   &       0.726\sym{*}\\
+                    &      (1.95)       &      (3.82)       &                   &                   &      (3.64)       \\
+Race (Hispanic=1)   &       0.653\sym{*}&                   &                   &                   &       0.728\sym{*}\\
+                    &      (2.29)       &                   &                   &                   &      (2.42)       \\
+Movies Frequency (Numeric)&      -0.435\sym{*}&                   &                   &                   &                   \\
+                    &     (-4.20)       &                   &                   &                   &                   \\
+Age                 &                   &       0.117\sym{*}&      0.0601       &                   &       0.115\sym{*}\\
+                    &                   &      (2.89)       &      (1.27)       &                   &      (3.37)       \\
+How often R listened to music at home in past year&                   &       0.262\sym{*}&                   &                   &                   \\
+                    &                   &      (2.47)       &                   &                   &                   \\
+Urban Location      &                   &                   &      -0.506\sym{*}&                   &                   \\
+                    &                   &                   &     (-2.78)       &                   &                   \\
+Books Frequency (Numeric)&                   &                   &      -0.171       &                   &                   \\
+                    &                   &                   &     (-1.35)       &                   &                   \\
+Race (Asian=1)      &                   &                   &                   &                   &       0.331       \\
+                    &                   &                   &                   &                   &      (0.65)       \\
+\midrule
+Gamma\_3             &                   &                   &                   &                   &                   \\
+Education           &      -0.204\sym{*}&      -0.229\sym{*}&                   &                   &                   \\
+                    &     (-2.88)       &     (-2.59)       &                   &                   &                   \\
+Family Income       &     -0.0971\sym{*}&                   &                   &      -0.218\sym{*}&     -0.0957\sym{*}\\
+                    &     (-1.87)       &                   &                   &     (-3.51)       &     (-1.69)       \\
+Race (Afr. Amer.=1) &       0.610\sym{*}&       0.804\sym{*}&                   &                   &       0.417       \\
+                    &      (2.39)       &      (2.67)       &                   &                   &      (1.41)       \\
+Race (Hispanic=1)   &       1.066\sym{*}&                   &                   &                   &       0.757\sym{*}\\
+                    &      (3.00)       &                   &                   &                   &      (1.78)       \\
+Movies Frequency (Numeric)&      -0.702\sym{*}&                   &                   &                   &                   \\
+                    &     (-5.72)       &                   &                   &                   &                   \\
+Age                 &                   &      0.0689       &       0.121\sym{*}&                   &      0.0166       \\
+                    &                   &      (1.29)       &      (2.19)       &                   &      (0.34)       \\
+How often R listened to music at home in past year&                   &       0.489\sym{*}&                   &                   &                   \\
+                    &                   &      (2.56)       &                   &                   &                   \\
+Urban Location      &                   &                   &      -0.472\sym{*}&                   &                   \\
+                    &                   &                   &     (-2.18)       &                   &                   \\
+Books Frequency (Numeric)&                   &                   &      -0.457\sym{*}&                   &                   \\
+                    &                   &                   &     (-2.89)       &                   &                   \\
+Race (Asian=1)      &                   &                   &                   &                   &       1.398\sym{*}\\
+                    &                   &                   &                   &                   &      (2.37)       \\
+\midrule
+Alpha               &                   &                   &                   &                   &                   \\
+\_cons\_1             &      -1.619\sym{*}&      -1.597\sym{*}&      -2.168\sym{*}&      -3.160\sym{*}&      -2.557\sym{*}\\
+                    &     (-5.32)       &     (-3.06)       &     (-5.58)       &    (-13.13)       &    (-10.17)       \\
+\_cons\_2             &      -1.831\sym{*}&      -4.020\sym{*}&      -3.543\sym{*}&      -4.886\sym{*}&      -5.165\sym{*}\\
+                    &     (-6.82)       &     (-7.77)       &     (-9.47)       &    (-18.07)       &    (-18.33)       \\
+\_cons\_3             &      -2.534\sym{*}&      -5.921\sym{*}&      -4.525\sym{*}&      -6.073\sym{*}&      -5.898\sym{*}\\
+                    &     (-8.61)       &     (-7.22)       &    (-10.30)       &    (-19.00)       &    (-17.48)       \\
+\midrule
+Observations        &        1785       &         992       &         987       &        1783       &        1783       \\
+\bottomrule
+\multicolumn{6}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{6}{l}{\footnotesize \sym{*} \(p<0.10\)}\\
+\end{longtable}
+}

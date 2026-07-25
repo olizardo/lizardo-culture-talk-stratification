@@ -1,0 +1,18 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular*}{\hsize}{@{\hskip\tabcolsep\extracolsep\fill}l*{5}{c}}
+\toprule
+                    &\multicolumn{1}{c}{Movies}&\multicolumn{1}{c}{Music}&\multicolumn{1}{c}{Books}&\multicolumn{1}{c}{Arts}&\multicolumn{1}{c}{Plays}\\
+\midrule
+main                &             &             &             &             &             \\
+Fine Arts Factor Score&        0.24*&        0.47*&        0.30*&        0.36*&        0.52*\\
+                    &      (7.44) &     (15.47) &      (8.15) &      (7.80) &     (12.67) \\
+Commercial Arts Factor Score&        0.18*&        0.26*&        0.17*&        0.04 &        0.11*\\
+                    &      (5.60) &      (4.72) &      (5.48) &      (1.42) &      (3.41) \\
+\midrule
+Obs                 &        1780 &        1779 &        1778 &        1780 &        1781 \\
+BIC                 &      4263.1 &      4385.8 &      4341.5 &      3553.7 &      3875.0 \\
+Model $\chi^{2}$    &       653.4 &       577.8 &       663.0 &       684.7 &       681.8 \\
+\bottomrule
+\end{tabular*}
+}

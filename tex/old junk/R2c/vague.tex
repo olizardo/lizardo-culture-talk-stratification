@@ -1,0 +1,73 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{longtable}{l*{5}{c}}
+\caption{Ordered logit models of qualitative frequency indicators: Interaction of socio-demographic effects with numeric indicators\label{tab:vague}}\\
+\toprule\endfirsthead\midrule\endhead\midrule\endfoot\endlastfoot
+                    &\multicolumn{1}{c}{Movies}&\multicolumn{1}{c}{Music}&\multicolumn{1}{c}{Books}&\multicolumn{1}{c}{Arts}&\multicolumn{1}{c}{Plays}\\
+\midrule
+main                &                   &                   &                   &                   &                   \\
+Education           &       0.277       &       0.205       &       0.462\sym{*}&       0.704\sym{*}&       0.332\sym{*}\\
+                    &      (1.51)       &      (0.71)       &      (2.00)       &      (3.33)       &      (1.90)       \\
+Educ. X Numeric Freq.&      -0.134\sym{*}&     -0.0779       &      -0.177\sym{*}&      -0.358\sym{*}&      -0.142\sym{*}\\
+                    &     (-1.91)       &     (-0.62)       &     (-1.93)       &     (-3.69)       &     (-1.91)       \\
+Family Income       &       0.167       &      -0.142       &      -0.116       &      0.0534       &       0.277\sym{*}\\
+                    &      (1.23)       &     (-0.67)       &     (-0.67)       &      (0.35)       &      (2.24)       \\
+Income X Numeric Freq.&     -0.0325       &      0.0540       &      0.0295       &     0.00443       &     -0.0993\sym{*}\\
+                    &     (-0.62)       &      (0.58)       &      (0.43)       &      (0.06)       &     (-1.85)       \\
+Age                 &      -0.322\sym{*}&     -0.0575       &      -0.168       &    -0.00499       &      -0.235\sym{*}\\
+                    &     (-2.84)       &     (-0.30)       &     (-1.30)       &     (-0.04)       &     (-2.31)       \\
+Age X Numeric Freq. &      0.0830\sym{*}&     -0.0562       &       0.116\sym{*}&     0.00797       &      0.0981\sym{*}\\
+                    &      (1.93)       &     (-0.69)       &      (2.25)       &      (0.15)       &      (2.29)       \\
+Gender (Women=1)    &     -0.0400       &       0.371       &       0.182       &     -0.0387       &       0.771\sym{*}\\
+                    &     (-0.09)       &      (0.55)       &      (0.36)       &     (-0.08)       &      (1.94)       \\
+Women X Numeric Freq.&      0.0890       &     -0.0573       &      0.0369       &     -0.0238       &      -0.404\sym{*}\\
+                    &      (0.54)       &     (-0.20)       &      (0.18)       &     (-0.11)       &     (-2.40)       \\
+Race (Afr. Amer.=1) &       0.277       &      -2.458\sym{*}&      -0.272       &      -0.373       &      -0.544       \\
+                    &      (0.40)       &     (-1.67)       &     (-0.31)       &     (-0.48)       &     (-0.84)       \\
+Afr. Amer. X Numeric Freq.&       0.160       &       1.335\sym{*}&       0.291       &       0.664\sym{*}&       0.624\sym{*}\\
+                    &      (0.61)       &      (1.91)       &      (0.82)       &      (1.76)       &      (2.17)       \\
+Race (Asian=1)      &       2.127       &      -26.54       &      -2.250       &      -0.523       &      -1.102       \\
+                    &      (1.37)       &     (-0.02)       &     (-0.93)       &     (-0.26)       &     (-0.62)       \\
+Asian X Numeric Freq.&      -0.743       &       13.14       &       0.703       &       0.330       &      0.0842       \\
+                    &     (-1.30)       &      (0.02)       &      (0.76)       &      (0.38)       &      (0.11)       \\
+Race (Hispanic=1)   &       0.187       &      -0.427       &       0.776       &      -0.780       &      -0.594       \\
+                    &      (0.18)       &     (-0.22)       &      (0.77)       &     (-0.65)       &     (-0.61)       \\
+Hispanic X Numeric Freq.&       0.239       &       0.165       &     0.00837       &       0.500       &       0.489       \\
+                    &      (0.61)       &      (0.21)       &      (0.02)       &      (0.95)       &      (1.20)       \\
+Married             &       0.188       &      -0.352       &       0.228       &       0.185       &       0.787\sym{*}\\
+                    &      (0.41)       &     (-0.47)       &      (0.41)       &      (0.36)       &      (1.80)       \\
+Married X Numeric Freq.&      -0.122       &       0.158       &      -0.158       &   -0.000120       &      -0.400\sym{*}\\
+                    &     (-0.69)       &      (0.49)       &     (-0.71)       &     (-0.00)       &     (-2.17)       \\
+Urban Location      &       0.502       &      -0.564       &       0.199       &       0.539       &       0.571       \\
+                    &      (1.13)       &     (-0.81)       &      (0.38)       &      (1.08)       &      (1.38)       \\
+Urban X Numeric Freq.&      -0.238       &       0.258       &     -0.0137       &     -0.0698       &      -0.278       \\
+                    &     (-1.39)       &      (0.87)       &     (-0.07)       &     (-0.31)       &     (-1.57)       \\
+Movies Frequency (Numeric)&       4.736\sym{*}&                   &                   &                   &                   \\
+                    &     (19.70)       &                   &                   &                   &                   \\
+Music Frequency (Numeric)&                   &       2.494\sym{*}&                   &                   &                   \\
+                    &                   &      (7.26)       &                   &                   &                   \\
+Books Frequency (Numeric)&                   &                   &       3.801\sym{*}&                   &                   \\
+                    &                   &                   &     (14.19)       &                   &                   \\
+Arts Frequency (Numeric)&                   &                   &                   &       5.489\sym{*}&                   \\
+                    &                   &                   &                   &     (18.88)       &                   \\
+Plays Frequency (Numeric)&                   &                   &                   &                   &       5.161\sym{*}\\
+                    &                   &                   &                   &                   &     (21.94)       \\
+\midrule
+cut1                &                   &                   &                   &                   &                   \\
+Constant            &       7.491\sym{*}&       2.029       &       6.378\sym{*}&       11.95\sym{*}&       9.247\sym{*}\\
+                    &      (7.43)       &      (1.21)       &      (5.37)       &     (10.20)       &      (9.94)       \\
+\midrule
+cut2                &                   &                   &                   &                   &                   \\
+Constant            &       13.39\sym{*}&       4.147\sym{*}&       9.784\sym{*}&       17.21\sym{*}&       13.75\sym{*}\\
+                    &     (12.44)       &      (2.47)       &      (7.97)       &     (14.05)       &     (14.21)       \\
+\midrule
+cut3                &                   &                   &                   &                   &                   \\
+Constant            &       15.35\sym{*}&       5.746\sym{*}&       11.65\sym{*}&       20.62\sym{*}&       16.72\sym{*}\\
+                    &     (14.18)       &      (3.42)       &      (9.40)       &     (16.39)       &     (16.85)       \\
+\midrule
+Observations        &        1786       &         995       &         989       &        1785       &        1784       \\
+\bottomrule
+\multicolumn{6}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{6}{l}{\footnotesize \sym{*} \(p<0.10\)}\\
+\end{longtable}
+}

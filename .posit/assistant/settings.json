@@ -1,0 +1,18 @@
+{
+  "permission": {
+    "bash": {
+      "mkdir *": "allow",
+      "quarto render *": "allow",
+      "pdftotext *": "allow",
+      "grep *": "allow",
+      "Rscript *": "allow"
+    },
+    "edit": {
+      "*.qmd": "allow",
+      "*.md": "allow"
+    },
+    "executeCode": {
+      "*": "allow"
+    }
+  }
+}

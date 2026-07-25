@@ -1,0 +1,9 @@
+\begin{thebibliography}{}
+\newcommand{\enquote}[1]{``#1''}
+
+\bibitem[\protect\citeauthoryear{Agresti}{Agresti}{2007}]{agresti07}
+Agresti, Alan. 2007.
+\newblock {\em An Introduction to Categorical Data Analysis\/}.
+\newblock Hoboken, {NJ}: Wiley.
+
+\end{thebibliography}

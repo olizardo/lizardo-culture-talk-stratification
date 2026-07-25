@@ -1,0 +1,98 @@
+---
+title: "Data Analysis & Replication"
+format: html
+---
+
+```{r setup, include=FALSE}
+library(MASS)
+library(dplyr)
+library(modelsummary)
+library(psych)
+library(ggplot2)
+library(marginaleffects)
+library(patchwork)
+
+df <- readRDS("../dat/small.rds")
+# Convert categorical/ordered variables
+# For polr, the dependent variable MUST be an ordered factor.
+for(var in c("talk_movies", "talk_music", "talk_books", "talk_arts", "talk_plays",
+             "freq_movies", "freq_music", "freq_books", "freq_arts", "freq_plays")) {
+  df[[var]] <- as.ordered(df[[var]])
+}
+
+xvars <- c("c_educ_imp", "c_finc_imp", "c_age_imp", "c_gender", "c_city")
+```
+
+## Table 2: Predictors of Culture Talk
+
+```{r}
+formulas_t2 <- list(
+  Movies = reformulate(c(xvars, "c_freq_movies"), "talk_movies"),
+  Music  = reformulate(c(xvars, "c_freq_music"), "talk_music"),
+  Books  = reformulate(c(xvars, "c_freq_books"), "talk_books"),
+  Arts   = reformulate(c(xvars, "c_freq_arts"), "talk_arts"),
+  Plays  = reformulate(c(xvars, "c_freq_plays"), "talk_plays")
+)
+
+models_t2 <- lapply(formulas_t2, function(f) polr(f, data = df, Hess = TRUE))
+modelsummary(models_t2, stars = TRUE, output = "../Tabs/table2.html")
+```
+
+## Table 3: Factor Loadings for Frequency Items
+
+```{r}
+# Stata: factor freq*, fac(2) pcf mine(.9) / rot, pro(3)
+freq_vars <- df %>% select(starts_with("freq_")) %>% mutate(across(everything(), as.numeric))
+fa_res <- principal(freq_vars, nfactors = 2, rotate = "promax")
+print(fa_res$loadings)
+
+# Save factor scores to dataframe
+df$hi <- fa_res$scores[,1] # Check if Factor 1 is Highbrow
+df$pop <- fa_res$scores[,2]
+
+# Overall factor
+fa_all <- principal(freq_vars, nfactors = 1)
+df$all <- fa_all$scores[,1]
+```
+
+## Table 4: Highbrow and pop factors as predictors of talk
+
+```{r}
+formulas_t4 <- list(
+  Movies = reformulate(c("c_freq_movies", "hi", "pop", xvars), "talk_movies"),
+  Music  = reformulate(c("c_freq_music", "hi", "pop", xvars), "talk_music"),
+  Books  = reformulate(c("c_freq_books", "hi", "pop", xvars), "talk_books"),
+  Arts   = reformulate(c("c_freq_arts", "hi", "pop", xvars), "talk_arts"),
+  Plays  = reformulate(c("c_freq_plays", "hi", "pop", xvars), "talk_plays")
+)
+
+models_t4 <- lapply(formulas_t4, function(f) polr(f, data = df, Hess = TRUE))
+modelsummary(models_t4, stars = TRUE, output = "../Tabs/table4.html")
+```
+
+## Table 5: Predictors of Cultural Participation
+
+```{r}
+formulas_t5 <- list(
+  Movies = reformulate(xvars, "freq_movies"),
+  Music  = reformulate(xvars, "freq_music"),
+  Books  = reformulate(xvars, "freq_books"),
+  Arts   = reformulate(xvars, "freq_arts"),
+  Plays  = reformulate(xvars, "freq_plays")
+)
+
+models_t5 <- lapply(formulas_t5, function(f) polr(f, data = df, Hess = TRUE))
+modelsummary(models_t5, stars = TRUE, output = "../Tabs/table5.html")
+```
+
+## Figures: Marginal Effects
+
+```{r}
+# Example for Figure 1: Marginal effect of Education vs Income
+# Stata: margins, dydx(c_finc_imp c_educ_imp) predict(pr out(4)) for movies/music/books
+# arts/plays: predict(pr out(3)) + predict(pr out(4))
+
+# Function to get marginal effects for out(4) or out(3+4)
+# In R, marginaleffects::avg_slopes or slopes can do this.
+# Skipping exact implementation here but can be added later.
+```
