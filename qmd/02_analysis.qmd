@@ -163,13 +163,17 @@ get_mfx_fig2 <- function(model, name) {
 
   if (name %in% c("Movies", "Music", "Books")) {
     s <- s[s$group == "4", ]
+    # Keep only the relevant columns to match the summarized ones below
+    s <- s %>% dplyr::select(!!sym(freq_var), estimate = estimate, std.error = std.error)
   } else {
     s <- s[s$group %in% c("3", "4"), ]
     # aggregate out(3) and out(4)
     s <- s %>% group_by(!!sym(freq_var)) %>% summarize(estimate = sum(estimate), std.error = sqrt(sum(std.error^2)))
   }
+  
+  # Rename the frequency variable to Engagement
+  s <- s %>% rename(Engagement = !!sym(freq_var))
   s$domain <- name
-  names(s)[1] <- "Engagement"
   return(s)
 }
 
@@ -181,13 +185,14 @@ fig2_data <- bind_rows(
   get_mfx_fig2(models_int$Plays, "Plays")
 )
 
-fig2_data$Engagement <- factor(fig2_data$Engagement, levels = 1:4, labels = c("Infrequent", " ", "  ", "Frequent"))
+fig2_data$Engagement <- factor(as.numeric(as.character(fig2_data$Engagement)), levels = 1:4, labels = c("Infrequent", " ", "  ", "Frequent"))
 fig2_data$domain <- factor(fig2_data$domain, levels = c("Movies", "Music", "Books", "Arts", "Plays"))
 
-fig2 <- ggplot(fig2_data, aes(x = Engagement, y = estimate, group = 1)) +
-  geom_point(size = 4, shape = 18, color = "white", fill = "black") +
+fig2 <- ggplot(fig2_data, aes(x = as.numeric(Engagement), y = estimate)) +
+  geom_point(size = 4, shape = 18, color = "black") +
   geom_line(color = "black") +
   geom_errorbar(aes(ymin = estimate - 1.645*std.error, ymax = estimate + 1.645*std.error), width = 0, size = 1) +
+  scale_x_continuous(breaks = 1:4, labels = c("Infrequent", "", "", "Frequent")) +
   facet_wrap(~domain, nrow = 1) +
   theme_classic() +
   geom_hline(yintercept = 0, size = 1) +
