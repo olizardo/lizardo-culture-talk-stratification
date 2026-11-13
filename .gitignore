@@ -1,0 +1,23 @@
+# Agent and editorial materials kept local only
+AGENTS.md
+.posit/
+docs/
+peer-reviews/
+tex/
+stata-archive/
+poetics-version-final.docx
+poetics-paper.pdf
+
+# Legacy notebooks superseded by R/ scripts
+qmd/
+
+# Generated outputs (reproduce via the pipeline)
+Tabs/
+Plots/
+qmd/*_files/
+qmd/*.html
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
