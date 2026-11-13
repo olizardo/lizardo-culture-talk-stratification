@@ -12,8 +12,7 @@ poetics-paper.pdf
 qmd/
 
 # Generated outputs (reproduce via the pipeline)
-Tabs/
-Plots/
+Tabs/*_files/
 qmd/*_files/
 qmd/*.html
 
